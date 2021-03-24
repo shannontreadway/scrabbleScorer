@@ -1,0 +1,15 @@
+<h2>Player 1</h2>
+<input #newWord type="text" placeholder="Enter your word here"/>
+<button (click)="updateWordsAndScores(newWord.value); newWord.value=''">Score Word</button>
+<p>Total Score: {{gameScore}}</p>
+
+<table>
+    <tr class="header-row">
+        <th>Word</th>
+        <th>Score</th>
+    </tr>
+    <tr *ngFor="let play of wordsWithPoints">
+        <td id="word">{{play.word}}</td>
+        <td id="points">{{play.pointValue}}</td>
+    </tr>
+</table>
