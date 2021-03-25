@@ -1,15 +1,18 @@
-<h2>Player 1</h2>
-<input #newWord type="text" placeholder="Enter your word here"/>
-<button (click)="updateWordsAndScores(newWord.value); newWord.value=''">Score Word</button>
+<input type="checkbox" id="bonusSeventyFive" [(ngModel)]="allTiles" (change)="bonusPoints()">
+<input #newWord type="text" placeholder="Your word"/>
+<input #wordToScore type="text" placeholder="Word to score"/>
+<button (click)="updateWordsAndScores(newWord.value, wordToScore.value); newWord.value=''; wordToScore.value=''">Score Word</button>
 <p>Total Score: {{gameScore}}</p>
 
 <table>
     <tr class="header-row">
         <th>Word</th>
         <th>Score</th>
+        <th>All Tiles Used</th>
     </tr>
     <tr *ngFor="let play of wordsWithPoints">
         <td id="word">{{play.word}}</td>
         <td id="points">{{play.pointValue}}</td>
+        <td>{{play.allTilesUsed}}</td>
     </tr>
 </table>
