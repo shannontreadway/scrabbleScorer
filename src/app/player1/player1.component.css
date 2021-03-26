@@ -1,3 +1,17 @@
-h2 {
-    color: blue;
+table {
+    width: 75%;
+}
+
+table {
+    border: 1px solid snow;
+    font-family: 'Kalam', cursive;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+#totalScore {
+    font-weight: bold;
 }
