@@ -7,13 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  words: string[] = [];
-  wordToScore: string = "";
-  wordScores: number[] = [];
   wordsWithPoints: WordPtObj[] = [];
-  wordForObject: string = "";
   gameScore: number = 0;
-  score: number = 0;
   allTiles: boolean = false;
   scrabblePoints = {a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10};
 
@@ -22,40 +17,32 @@ export class PlayerComponent implements OnInit {
   ngOnInit() {
   }
 
-  addWord(newWord: string){
-    this.wordForObject = newWord;
-    return this.words.unshift(newWord);
-  }
-
-  bonusPoints() {
-    this.allTiles = true;
-    return;
-  }
-
-  scoreWord(wordToScore: string){
-    this.score = 0;
-    wordToScore = wordToScore.toLowerCase();
-    let newWordArray = wordToScore.split("");
-    for (let i = 0; i < newWordArray.length; i++){
-      this.score += this.scrabblePoints[newWordArray[i]];
+  scoreWord(wordToScore: string): number{
+    let score = 0;
+    for (const char of wordToScore.toLowerCase()) {
+      score += this.scrabblePoints[char];
     };
     if(this.allTiles){
-      this.score += 75;
-    }
-    return this.wordScores.unshift(this.score);
-  }
+      score += 75;
+    };
+    return score;
+  };
 
   updateWordsAndScores(newWord: string, wordToScore: string) {
-    this.addWord(newWord);
-    this.scoreWord(wordToScore);
-    let wordObject = new WordPtObj(this.wordForObject, this.score, this.allTiles);
+    const score: number = this.scoreWord(wordToScore);
+    const wordObject = new WordPtObj(newWord, score, this.allTiles);
     this.wordsWithPoints.unshift(wordObject);
-    this.allTiles=false;
-    this.gameScore += this.score;
+    this.allTiles = false;
+    this.gameScore += score;
     return;
-  }
+  };
+
+  allTilesClicked() {
+    this.allTiles = !this.allTiles;
+    return;
+  };
   
-}
+};
 
 class WordPtObj{
   word: string;
@@ -66,5 +53,5 @@ class WordPtObj{
     this.word = word;
     this.pointValue = pointValue;
     this.allTilesUsed = allTilesUsed;
-  }
-}
+  };
+};
