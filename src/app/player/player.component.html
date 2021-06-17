@@ -1,7 +1,7 @@
 <label>All tiles used<input #allTilesUsed type="checkbox" (click)=allTilesClicked()></label>
 <input #newWord type="text" placeholder="Your word"/>
 <input #wordToScore type="text" placeholder="Word to score"/>
-<button (click)="updateWordsAndScores(newWord.value, wordToScore.value); newWord.value=''; wordToScore.value=''; allTilesUsed.checked=false">Score Word</button>
+<button (click)="updateWordsAndScores(newWord.value, wordToScore.value, allTilesUsed); newWord.value=''; wordToScore.value=''; allTilesUsed.checked=false">Score Word</button>
 
 <h3 id="totalScore">Total Score: {{gameScore}}</h3>
 
