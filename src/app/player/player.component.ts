@@ -2,11 +2,11 @@ import { isLoweredSymbol } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-player1',
-  templateUrl: './player1.component.html',
-  styleUrls: ['./player1.component.css']
+  selector: 'app-player',
+  templateUrl: './player.component.html',
+  styleUrls: ['./player.component.css']
 })
-export class Player1Component implements OnInit {
+export class PlayerComponent implements OnInit {
   words: string[] = [];
   wordToScore: string = "";
   wordScores: number[] = [];

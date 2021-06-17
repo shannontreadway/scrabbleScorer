@@ -2,6 +2,7 @@
 <input #newWord type="text" placeholder="Your word"/>
 <input #wordToScore type="text" placeholder="Word to score"/>
 <button (click)="updateWordsAndScores(newWord.value, wordToScore.value); newWord.value=''; wordToScore.value=''">Score Word</button>
+
 <h3 id="totalScore">Total Score: {{gameScore}}</h3>
 
 <table>
