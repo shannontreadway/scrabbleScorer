@@ -11,28 +11,34 @@ const scrabblePoints = {a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t:
 export class PlayerComponent implements OnInit {
   wordsWithPoints: WordPtObj[] = [];
   gameScore: number = 0;
+  allTilesUsed: boolean = false;
+  newWord: string = "";
+  wordToScore: string = "";
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  scoreWord(wordToScore: string, allTilesUsed): number{
+  scoreWord(wordToScore: string, allTilesUsed: boolean): number{
     let score = 0;
     for (const char of wordToScore.toLowerCase()) {
       score += scrabblePoints[char];
     };
-    if(allTilesUsed.checked){
+    if(allTilesUsed){
       score += 75;
     };
     return score;
   };
 
-  updateWordsAndScores(newWord: string, wordToScore: string, allTilesUsed) {
-    const score: number = this.scoreWord(wordToScore, allTilesUsed);
-    const wordObject = new WordPtObj(newWord, score, allTilesUsed);
+  updateWordsAndScores() {
+    const score: number = this.scoreWord(this.wordToScore, this.allTilesUsed);
+    const wordObject = new WordPtObj(this.newWord, score, this.allTilesUsed);
     this.wordsWithPoints.unshift(wordObject);
     this.gameScore += score;
+    this.allTilesUsed = false;
+    this.newWord = "";
+    this.wordToScore = "";
     return;
   };
   
@@ -49,3 +55,5 @@ class WordPtObj{
     this.allTilesUsed = allTilesUsed;
   };
 };
+
+
