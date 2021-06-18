@@ -1,3 +1,7 @@
+h2 {
+    font-weight: bold;
+}
+
 .mainSection {
     background-color: midnightblue;
     color: snow;
@@ -8,6 +12,10 @@
 .instructions {
     padding-left: 4%;
     padding-right: 4%;
+    padding-bottom: 15px;
+}
+
+.gameplay {
     padding-bottom: 15px;
 }
 
@@ -29,8 +37,4 @@
 #player4 {
     background-color: darkmagenta;
     padding: 5px 7%;
-}
-
-h2 {
-    font-weight: bold;
 }

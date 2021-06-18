@@ -1,15 +1,17 @@
 table {
     width: 75%;
-}
-
-table {
     border: 1px solid snow;
     font-family: 'Kalam', cursive;
     text-align: center;
+    padding-bottom: 7px;
 }
 
 th {
     font-weight: bold;
+}
+
+.bufferSpace{
+    height: 15px;
 }
 
 #totalScore {

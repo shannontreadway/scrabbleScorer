@@ -55,5 +55,3 @@ class WordPtObj{
     this.allTilesUsed = allTilesUsed;
   };
 };
-
-

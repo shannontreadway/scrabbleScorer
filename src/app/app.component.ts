@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Scrabble Scorer';
+  hidden: boolean = false;
+
+  toggleDisplay() {
+    this.hidden = true;
+    return;
+  }
 }
