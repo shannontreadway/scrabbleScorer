@@ -1,36 +1,36 @@
 h2 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .mainSection {
-    background-color: midnightblue;
-    color: snow;
-    font-family: 'Cabin', sans-serif;
-    padding-top: 10px;
+  background-color: #000000;
+  color: snow;
+  font-family: "Cabin", sans-serif;
+  padding-top: 10px;
 }
 
 .instructions {
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-bottom: 15px;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 15px;
 }
 
 #player1 {
-    background-color: firebrick;
-    padding: 5px 7%;
+  background-color: #112358;
+  padding: 5px 7%;
 }
 
 #player2 {
-    background-color: black;
-    padding: 5px 7%;
+  background-color: #1e88e5;
+  padding: 5px 7%;
 }
 
 #player3 {
-    background-color: peru;
-    padding: 5px 7%;
+  background-color: #060e9c;
+  padding: 5px 7%;
 }
 
 #player4 {
-    background-color: darkmagenta;
-    padding: 5px 7%;
+  background-color: #05b7a7;
+  padding: 5px 7%;
 }
