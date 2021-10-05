@@ -1,20 +1,22 @@
-<label>All tiles used<input type="checkbox" [(ngModel)]="allTilesUsed"></label>
-<input [(ngModel)]="newWord" type="text" placeholder="Your word"/>
-<input [(ngModel)]="wordToScore" type="text" placeholder="Word to score"/>
+<label
+  >All tiles used<input type="checkbox" [(ngModel)]="allTilesUsed"
+/></label>
+<input [(ngModel)]="newWord" type="text" placeholder="Your word" />
+<input [(ngModel)]="wordToScore" type="text" placeholder="Word to score" />
 <button (click)="updateWordsAndScores()">Score Word</button>
 
-<h3 id="totalScore">Total Score: {{gameScore}}</h3>
+<h3 id="totalScore">Total Score: {{ gameScore }}</h3>
 
 <table>
-    <tr class="header-row">
-        <th>Word</th>
-        <th>Score</th>
-        <th>All Tiles Used</th>
-    </tr>
-    <tr *ngFor="let play of wordsWithPoints">
-        <td id="word">{{play.word}}</td>
-        <td id="points">{{play.pointValue}}</td>
-        <td *ngIf=(play.allTilesUsed)>Yes</td>
-    </tr>
+  <tr class="header-row">
+    <th>Word</th>
+    <th>Score</th>
+    <th>All Tiles Used</th>
+  </tr>
+  <tr *ngFor="let play of wordsWithPoints">
+    <td id="word">{{ play.word }}</td>
+    <td id="points">{{ play.pointValue }}</td>
+    <td *ngIf="play.allTilesUsed">Yes</td>
+  </tr>
 </table>
 <div class="bufferSpace"></div>
